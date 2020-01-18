@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700|Playfair+Display:400,700&display=swap" rel="stylesheet">
+  <title>PENTA</title>
+</head>
+<body class="loading">
+  <header class="header">
+    <div class="header-line">
+      <div class="container">
+        <div class="header-line-wrapper">
+          <div class="header-line-info">
+            <div class="header-line-info-item">
+              <div class="header-line-info-item-icon">
+                <img src="#" alt="telephon">
+              </div>
+              <div class="header-line-info-item-text">(123) 456-95400</div>
+            </div>
+            <div class="header-line-info-item">
+              <div class="header-line-info-item-icon">
+                <img src="#" alt="email">
+              </div>
+              <div class="header-line-info-item-text">info@yourmail.com</div>
+            </div>
+
+          </div>
+          <div class="header-line-logo">penta</div>
+          <div class="header-line-links">
+            <ul class="header-line-links-list">
+              <li><a href="#">sign up</a></li>
+              <li><a href="#">login</a></li>
+              <li><a href="#">about</a></li>
+              <li><a href="#">contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-naw">
+      <div class="container">
+        <div class="header-menu">
+          <ul class="header-menu-items">
+            <li class="header-menu-item"><a href="#">home</a></li>
+            <li class="header-menu-item"><a href="#">shop</a></li>
+            <li class="header-menu-item"><a href="#">lookbook</a></li>
+            <li class="header-menu-item"><a href="#">women’s</a></li>
+            <li class="header-menu-item"><a href="#">men’s</a></li>
+            <li class="header-menu-item"><a href="#">baby</a></li>
+            <li class="header-menu-item"><a href="#">features</a></li>
+          </ul>
+        </div>
+        <div class="header-tools">
+          <div class="header-tools-item">
+            <div class="header-tools-item-text"></div>
+            <div class="header-tools-item-icon"></div>
+          </div>
+          <div class="header-tools-item">
+            <div class="header-tools-item-icon"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="products-list">
+
+  </section>
+
+  <script id="product-tpl" type="x-tmpl-mustache">
+    <div class="product" data-id = "{{ id }}">
+      <div class="product-title">
+        {{ title }}
+      </div>
+      <div class="product-quantity">Кол-во: {{ quantity }} шт.</div>
+    </div>
+  </script>
+
+  <script id="person" type="x-tmpl-mustache">
+    <div class="person">
+        <div class="person-name">
+          {{ name }}
+        </div>
+        <div class="person-age">
+          {{ age }}
+        </div>
+        <div class="person-children">
+          {{ #children }}
+            <div class="person-child">
+              <div class="person-child-name">{{ name }}</div>
+              <div class="person-child-age">{{ age }}</div>
+            </div>
+          {{ /children }}
+        </div>
+        <div class="person-bla">
+          {{ #blabla }}
+              {{.}}
+          {{ /blabla }}
+        </div>
+    </div>
+  </script>
+</body>
+</html>
