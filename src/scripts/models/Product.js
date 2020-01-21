@@ -1,4 +1,5 @@
 import Category from "./Category";
+import StoreService from "../storeService";
 
 export default class Product {
     constructor({
@@ -9,7 +10,7 @@ export default class Product {
                     img = null,
                     description = '',
                     category = new Category()
-    } = {}) {
+                } = {}) {
         this.id = id;
         this.title = title;
         this.price = price;
@@ -29,20 +30,20 @@ export default class Product {
         this.category = category;
     }
 
-    toJson() {
-        return JSON.stringify({
+    toJSON() {
+        return {
             id: this.id,
             title: this.title,
             price: this.price,
             quantity: this.quantity,
             img: this.img,
             category: this.category.toJson(),
-        });
+        };
     }
 
     static fromJson(jsonString) {
-
         let productDecoded = typeof jsonString === 'object' ? jsonString : JSON.parse(jsonString);
+
         if (!this.validate(productDecoded)) {
             return null;
         }
@@ -53,6 +54,8 @@ export default class Product {
     }
 
     static validate(obj) {
+        if (obj === null) return false;
+
         let requiredProperties = [
             'id',
             'title',

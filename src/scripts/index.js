@@ -1,43 +1,39 @@
-import '../styles/index.scss';
-
-
+import 'models/catalog.js';
+import '../../styles/index.scss';
 import Mustache from 'mustache';
 
-import Product from "./models/Product";
-import Store from './store';
-import CounterProducts from "./models/counterProducts";
+import StoreService from 'storeService';
 
-let store = new Store();
+let storeService = new StoreService();
+window.storeService = storeService;
 
-let productsArray = [];
-
-for (let i = 1; i <= 10; i++) {
-    productsArray.push(new Product({
-        id: i,
-        title: `Product #${i}`,
-        quantity: Math.ceil(Math.random() * i)
-    }));
-}
+storeService.loadData();
 
 
-store.set('products', productsArray);
-
-let counterProducts = new CounterProducts();
-
-let  id = this.getAttribute('data-id');
-let result = counterProducts.putProduct(id);
-
-counterProducts.containerCounter.innerText = result.products.length;
-
-
+let cart = storeService.get('cart');
+let products = storeService.get('products');
 
 // Работа с Mustache
-
 let productTMPL = document.getElementById('product-tpl').innerHTML;
 
-productsArray.forEach(product => {
-    let productHTML = Mustache.render(productTMPL, product);
-    document.querySelector('.products-list').innerHTML += productHTML;
+products.forEach(product => {
+    document.querySelector('.products-list').innerHTML += Mustache.render(productTMPL, product);
 });
+
+Array.from(document.getElementsByClassName('product')).forEach(element => {
+    element.addEventListener('click', e => {
+        let productEl = e.target.classList.contains('product') ? e.target : e.target.closest('.product');
+
+        if (!productEl) return;
+
+        let product = products.find(prd => prd.id == productEl.dataset.id);
+
+        cart.addProduct(product, 1);
+    });
+});
+
+window.onunload = function () {
+    storeService.save();
+};
 
 

@@ -109,43 +109,30 @@
         <div class="big_sail-foto"></div>
     </div>
 </section>
-<section class="products-list">
+<section class="category-list"></section>
 
+<section class="whats_new">
+    <div class="container">
+        <div class="whats_new-title">Whats New</div>
+        <div class="whats_new-dsc">New Collections this Season</div>
+        <div class="products-list"></div>
+    </div>
+    <div class="products-list"></div>
 </section>
 
 <script id="product-tpl" type="x-tmpl-mustache">
     <div class="product" data-id = "{{ id }}">
+       <div class="product-img">
+        {{ img }}
+      </div>
       <div class="product-title">
         {{ title }}
       </div>
-      <div class="product-quantity">Кол-во: {{ quantity }} шт.</div>
+      <div class="product-price">from $ {{ price }} </div>
     </div>
 
 </script>
 
-<script id="person" type="x-tmpl-mustache">
-    <div class="person">
-        <div class="person-name">
-          {{ name }}
-        </div>
-        <div class="person-age">
-          {{ age }}
-        </div>
-        <div class="person-children">
-          {{ #children }}
-            <div class="person-child">
-              <div class="person-child-name">{{ name }}</div>
-              <div class="person-child-age">{{ age }}</div>
-            </div>
-          {{ /children }}
-        </div>
-        <div class="person-bla">
-          {{ #blabla }}
-              {{.}}
-          {{ /blabla }}
-        </div>
-    </div>
 
-</script>
 </body>
 </html>
