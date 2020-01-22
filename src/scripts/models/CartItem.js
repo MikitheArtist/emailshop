@@ -1,27 +1,22 @@
 import Product from "./Product";
-import Cart from "../cart/Cart";
+import Cart from "./Cart";
 
 export default class CartItem {
     constructor({
-        product = new Product(),
-        quantity = 1
+                    product = new Product(),
+                    quantity = 1
                 } = {}) {
         this.product = product;
         this.quantity = quantity;
     }
 
-    reduceQuantity(quantity) {
-        if (this.product.quantity === 0) {
-            console.error('Not enough products');
-            return;
+    decreaseQuantity(quantity) {
+        if (this.quantity < quantity) {
+            quantity = this.quantity;
         }
 
-        if (this.product.quantity < quantity) {
-            quantity = this.product.quantity;
-        }
-
-        this.product.quantity -= quantity;
-        this.quantity += quantity;
+        this.product.quantity += quantity;
+        this.quantity -= quantity;
     }
 
     increaseQuantity(quantity) {
@@ -36,6 +31,18 @@ export default class CartItem {
 
         this.product.quantity -= quantity;
         this.quantity += quantity;
+    }
+
+    toJSON() {
+        return {
+            product: this.product,
+            quantity: this.quantity,
+        };
+    }
+
+    reset() {
+        this.product.quantity += this.quantity;
+        this.quantity = 0;
     }
 
     static create({product = new Product(), quantity = 1} = {}) {
@@ -54,5 +61,31 @@ export default class CartItem {
             product,
             quantity,
         });
+    }
+
+    static fromJson(jsonString) {
+        let cartItemDecoded = typeof jsonString === 'object' ? jsonString : JSON.parse(jsonString);
+
+        if (!this.validate(cartItemDecoded)) { return null; }
+
+        cartItemDecoded['product'] = window.storeService.get('products').find(product => product.id == cartItemDecoded['product'].id);
+
+        return this.create(cartItemDecoded);
+    };
+
+    static validate(obj) {
+        if (obj === null) return false;
+
+        let requiredProperties = [
+            'product',
+            'quantity'
+        ];
+
+        if (requiredProperties.every(prop => prop in obj) === false) {
+            console.error('Validation error, no such required props in given object');
+            return false;
+        }
+
+        return true;
     }
 }
