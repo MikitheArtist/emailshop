@@ -1,5 +1,6 @@
-import 'models/catalog.js';
-import '../../styles/index.scss';
+import '../styles/index.scss';
+import './models/catalog.js';
+
 import Mustache from 'mustache';
 
 import StoreService from 'storeService';
@@ -7,6 +8,15 @@ import StoreService from 'storeService';
 let storeService = new StoreService();
 window.storeService = storeService;
 
+import productsCatalog from  './models/catalog';
+import Product from './models/Product';
+
+let prdArray = [];
+productsCatalog.forEach(product => {
+    prdArray.push(new Product(product));
+});
+
+localStorage.setItem('products', JSON.stringify(prdArray));
 storeService.loadData();
 
 

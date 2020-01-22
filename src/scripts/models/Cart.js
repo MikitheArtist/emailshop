@@ -1,7 +1,7 @@
-import Product from "Product";
-import CartItem from "CartItem";
+import Product from "./Product";
+import CartItem from "./CartItem";
 import CartRenderer from "../cart/CartRenderer";
-import Category from "Category";
+import Category from "./Category";
 
 export default class Cart {
     constructor({cartItems = []} = {}) {
