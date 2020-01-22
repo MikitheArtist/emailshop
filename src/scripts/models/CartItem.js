@@ -37,7 +37,7 @@ export default class CartItem {
         return {
             product: this.product,
             quantity: this.quantity,
-        }
+        };
     }
 
     reset() {
@@ -71,7 +71,7 @@ export default class CartItem {
         cartItemDecoded['product'] = window.storeService.get('products').find(product => product.id == cartItemDecoded['product'].id);
 
         return this.create(cartItemDecoded);
-    }
+    };
 
     static validate(obj) {
         if (obj === null) return false;

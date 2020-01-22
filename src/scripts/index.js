@@ -1,14 +1,13 @@
 import '../styles/index.scss';
-import './models/catalog.js';
 
 import Mustache from 'mustache';
 
-import StoreService from 'storeService';
+import StoreService from './storeService';
 
 let storeService = new StoreService();
 window.storeService = storeService;
-
 import productsCatalog from  './models/catalog';
+
 import Product from './models/Product';
 
 let prdArray = [];
