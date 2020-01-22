@@ -6,7 +6,7 @@ import StoreService from './storeService';
 
 let storeService = new StoreService();
 window.storeService = storeService;
-import productsCatalog from  './models/catalog';
+import {productsCatalog} from  './models/catalog';
 
 import Product from './models/Product';
 
@@ -17,8 +17,6 @@ productsCatalog.forEach(product => {
 
 localStorage.setItem('products', JSON.stringify(prdArray));
 storeService.loadData();
-
-
 let cart = storeService.get('cart');
 let products = storeService.get('products');
 
