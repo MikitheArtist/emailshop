@@ -33,7 +33,7 @@ Array.from(document.getElementsByClassName('product')).forEach(element => {
 
         if (!productEl) return;
 
-        let product = products.find(prd => prd.id == productEl.dataset.id);
+        let product = products.find(prd => prd.id === productEl.dataset.id);
 
         cart.addProduct(product, 1);
     });

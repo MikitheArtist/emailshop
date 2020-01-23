@@ -7,9 +7,12 @@ export default class Cart {
     constructor({cartItems = []} = {}) {
         this.cartItems = cartItems;
 
-        this.renderer = new CartRenderer(this);
+        this.renderer = new CartRenderer(this, ".header-tools-item");
+        console.log(this.renderer);
         this.renderer.updateHeaderCart();
+
     }
+
 
     get totalPrice() {
         let totalPrice = 0;
@@ -57,7 +60,7 @@ export default class Cart {
     }
 
     findCartItemByProduct(product) {
-        return this.cartItems.find(cartItem => cartItem.product.id == product.id);
+        return this.cartItems.find(cartItem => cartItem.product.id === product.id);
     }
 
     findCartItemIndexByProduct(product) {

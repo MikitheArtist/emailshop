@@ -287,6 +287,21 @@ body {
     margin-bottom: 70px;
     
   }
+
+  .products-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .products {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      cursor: pointer;
+    }
+  }
+
 }
 
 

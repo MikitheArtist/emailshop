@@ -68,7 +68,7 @@ export default class CartItem {
 
         if (!this.validate(cartItemDecoded)) { return null; }
 
-        cartItemDecoded['product'] = window.storeService.get('products').find(product => product.id == cartItemDecoded['product'].id);
+        cartItemDecoded['product'] = window.storeService.get('products').find(product => product.id === cartItemDecoded['product'].id);
 
         return this.create(cartItemDecoded);
     };
