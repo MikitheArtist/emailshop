@@ -27,15 +27,16 @@ products.forEach(product => {
     document.querySelector('.products-list').innerHTML += Mustache.render(productTMPL, product);
 });
 
-Array.from(document.getElementsByClassName('product')).forEach(element => {
+Array.from(document.getElementsByClassName('products-list')).forEach(element => {
     element.addEventListener('click', e => {
-        let productEl = e.target.classList.contains('product') ? e.target : e.target.closest('.product');
+        let productEl = e.target.classList.contains('products') ? e.target : e.target.closest('.products');
 
         if (!productEl) return;
 
         let product = products.find(prd => prd.id === productEl.dataset.id);
 
         cart.addProduct(product, 1);
+
     });
 });
 
