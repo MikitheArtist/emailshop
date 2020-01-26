@@ -7,8 +7,24 @@ import StoreService from './storeService';
 let storeService = new StoreService();
 window.storeService = storeService;
 import {productsCatalog} from  './models/catalog';
-
+import {productsCategories} from "./models/productsCategory";
 import Product from './models/Product';
+import Category from './models/Category';
+
+let ctgArray = [];
+productsCategories.forEach(category => {
+    ctgArray.push(new Category(category));
+});
+localStorage.setItem('categories', JSON.stringify(ctgArray));
+storeService.loadCategories();
+let categories = storeService.get('categories');
+//Работа с Mustache
+let categoryTMPL = document.getElementById("category-tpl").innerHTML;
+
+categories.forEach(category => {
+    document.querySelector(".category-list").innerHTML += Mustache.render(categoryTMPL, category);
+});
+
 
 let prdArray = [];
 productsCatalog.forEach(product => {
