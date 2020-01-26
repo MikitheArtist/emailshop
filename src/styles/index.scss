@@ -253,11 +253,12 @@ body {
   .big_sail-foto {
     background-image: url("../img/big_sail.png");
     background-size: cover;
-    opacity: 0.7;
+    opacity: 0.9;
     width: 100%;
     height: 100%;
   }
 }
+
 .category {
   background-color: #ffffff;
   padding: 0;
@@ -273,92 +274,99 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-  }
 
-  .category-list-item {
-    width: 545px;
-    height: 305px;
-    background-color: #f4f4f4;
 
-  }
-  .category-list-item:first-child {
-    margin-right: 50px;
-    height: 100%;
-    .category-dsc {
-      top: 300px;
+    .category-list-item {
+      position: relative;
+      width: 545px;
+      height: 305px;
+      background-color: #f4f4f4;
+
+      .wrapper-img {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .category-dsc {
+        position: absolute;
+        top: 70px;
+        left: 50px;
+        z-index: 90;
+
+        .category-dsc-title {
+          font-family: 'Playfair Display', sans-serif;
+          font-weight: 400;
+          font-size: 4.5rem;
+          text-transform: uppercase;
+          color: #a4836d;
+          padding: 0;
+          margin: 0;
+        }
+
+        .category-dsc-collection {
+          font-family: 'Oswald', serif;
+          font-size: 1.875rem;
+          color: #9d9d9d;
+          text-transform: uppercase;
+          padding: 0;
+          margin: 0 0 20px;
+        }
+
+        .category-dsc-btn {
+          text-align: left;
+
+          .button {
+            text-align: center;
+            width: 110px;
+            height: 40px;
+            font-weight: 500;
+            text-transform: uppercase;
+            border: none;
+            font-size: 0.8125rem;
+            font-family: "Oswald", sans-serif;
+            background-color: #424242;
+            color: #ffffff;
+            cursor: pointer;
+          }
+
+          .button:hover {
+            background-color: #a4836d;
+          }
+        }
+      }
     }
 
-  }
+    .category-list-item:first-child {
+      margin-right: 50px;
+      height: 100%;
+      .category-dsc {
+        margin-top: 300px;
+      }
 
-  .category-list-item:nth-child(3n) {
-    margin-top: 50px;
-  }
-
-  .wrapper-img {
-    position: relative;
-  }
-
-  .category-dsc {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: 80px;
-    left: 50px;
-  }
-
-  .category-dsc-title {
-    font-family: 'Playfair Display', sans-serif;
-    font-weight: 400;
-    font-size: 4.5rem;
-    text-transform: uppercase;
-    color: #a4836d;
-    padding: 0;
-    margin: 0;
-  }
-
-  .category-dsc-collection {
-    font-family: 'Oswald', serif;
-    font-size:1.875rem;
-    color: #9d9d9d;
-    text-transform: uppercase;
-    padding: 0;
-    margin: 0;
-  }
-
-  .category-dsc-btn {
-    text-align: left;
-
-    .button {
-      text-align: center;
-      width:110px;
-      height: 40px;
-      font-weight: 500;
-      text-transform: uppercase;
-      border: none;
-      font-size: 0.8125rem;
-      font-family: "Oswald", sans-serif;
-      background-color: #424242;
-      color: #ffffff;
-      cursor: pointer;
     }
-    .button:hover {
-      background-color: #a4836d;
+
+    .category-list-item:nth-child(3n) {
+      margin-top: 50px;
     }
   }
-
-
 }
 
 .whats_new {
   height: 710px;
   background-color: #ffffff;
-  padding: 70px 0;
+  padding: 0;
   margin: 0;
 
   .container {
+    margin-bottom: 70px;
+    margin-top: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -405,8 +413,102 @@ body {
       justify-content: center;
       margin-bottom: 30px;
     }
+
+    .product-title {
+      font-size: 0.875rem;
+      font-family: 'Oswald', serif;
+      text-transform: uppercase;
+      color: #424242;
+    }
+
+    .product-price {
+      font-size: 0.875rem;
+      font-family: 'Oswald', serif;
+      color: #9d9d9d;
+
+    }
   }
 
+}
+
+.get_off {
+  padding: 0;
+  margin: 0;
+  background-color: #f7f7f9;
+
+  .container {
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .get_off-title {
+      font-family: 'Playfair Display',serif;
+      font-size: 2.25rem;
+      color: #424242;
+      margin-bottom: 20px;
+    }
+
+    .get_off-dsc,  {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.875rem;
+      color: #9d9d9d;
+      margin-bottom: 35px;
+    }
+    .get_off-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.875rem;
+      color: #9d9d9d;
+      margin-top: 40px;
+    }
+
+    .get_off-form {
+      width: 100%;
+      max-width: 420px;
+
+      .form {
+        display: flex;
+      }
+
+      .form_line {
+        width: 100%;
+
+        input {
+          width: 100%;
+          padding: 15px 20px;
+          border: none;
+          background-color: #ffffff;
+          font-family: 'Oswald', sans-serif;
+          font-size: 0.875rem;
+          color: #aaaaaa;
+          outline: none;
+        }
+      }
+
+      .get_off-button {
+        button {
+          width: 116Px;
+          height: 50px;
+          font-weight: 500;
+          text-transform: uppercase;
+          border: none;
+          font-size: 0.8125rem;
+          font-family: "Oswald", sans-serif;
+          background-color: #424242;
+          color: #ffffff;
+          cursor: pointer;
+        }
+
+        .button:hover {
+          background-color: #a4836d;
+        }
+      }
+
+    }
+
+
+  }
 }
 
 
