@@ -194,6 +194,7 @@ body {
 .big_sail {
   height: 580px;
   background-color: #f4f4f4;
+  margin-bottom: 50px;
 
   .container {
     display: flex;
@@ -257,6 +258,99 @@ body {
     height: 100%;
   }
 }
+.category {
+  background-color: #ffffff;
+  padding: 0;
+  margin: 0;
+
+  .container {
+    height: 660px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .category-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .category-list-item {
+    width: 545px;
+    height: 305px;
+    background-color: #f4f4f4;
+
+  }
+  .category-list-item:first-child {
+    margin-right: 50px;
+    height: 100%;
+    .category-dsc {
+      top: 300px;
+    }
+
+  }
+
+  .category-list-item:nth-child(3n) {
+    margin-top: 50px;
+  }
+
+  .wrapper-img {
+    position: relative;
+  }
+
+  .category-dsc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 80px;
+    left: 50px;
+  }
+
+  .category-dsc-title {
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 400;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    color: #a4836d;
+    padding: 0;
+    margin: 0;
+  }
+
+  .category-dsc-collection {
+    font-family: 'Oswald', serif;
+    font-size:1.875rem;
+    color: #9d9d9d;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+  }
+
+  .category-dsc-btn {
+    text-align: left;
+
+    .button {
+      text-align: center;
+      width:110px;
+      height: 40px;
+      font-weight: 500;
+      text-transform: uppercase;
+      border: none;
+      font-size: 0.8125rem;
+      font-family: "Oswald", sans-serif;
+      background-color: #424242;
+      color: #ffffff;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #a4836d;
+    }
+  }
+
+
+}
 
 .whats_new {
   height: 710px;
@@ -285,13 +379,13 @@ body {
     font-size: 0.875rem;
     color: #9d9d9d;
     margin-bottom: 70px;
-    
+
   }
 
   .products-list {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
     .products {
       display: flex;
@@ -299,6 +393,17 @@ body {
       justify-content: center;
       flex-direction: column;
       cursor: pointer;
+      margin-right: 30px;
+    }
+
+    .product-img {
+      width: 360px;
+      height: 370px;
+      background-color: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
     }
   }
 
