@@ -1,7 +1,8 @@
 export default class Category {
-    constructor({ title = '', id = 0 } = {}) {
+    constructor({ title = '', id = 0, img = null } = {}) {
         this.id = id;
         this.title = title;
+        this.img = img;
     }
 
     toJson() {

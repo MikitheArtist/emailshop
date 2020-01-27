@@ -31,8 +31,7 @@ productsCatalog.forEach(product => {
     prdArray.push(new Product(product));
 });
 
-/*localStorage.setItem('products', JSON.stringify(prdArray));
-storeService.loadData();*/
+
 storeService.set('products', prdArray);
 let cart = storeService.get('cart');
 let products = storeService.get('products');
@@ -40,20 +39,19 @@ let products = storeService.get('products');
 // Работа с Mustache
 let productTMPL = document.getElementById('product-tpl').innerHTML;
 
-/*let newArray = products.filter(function(el) {
-return el.is_new == true;
-});*/
 let newProducts = products.filter(product => product.is_new === true);
-//console.log(newArray);
-/*products.forEach(product => {
-    if ('is_new' === true) {
-        document.querySelector('.products-list').innerHTML += Mustache.render(productTMPL, product);}
-    if ('is_featured'=== true) {
-    document.querySelector('.featured-list').innerHTML += Mustache.render(productTMPL, product);}
-    return false;
-});*/
+
 console.log(newProducts);
-document.querySelector('.products-list').innerHTML += Mustache.render(productTMPL, newProducts);
+newProducts.forEach( product => {
+    document.querySelector('.products-list').innerHTML += Mustache.render(productTMPL, product);
+});
+
+let newFeatured = products.filter(product => product.is_featured === true);
+newFeatured.forEach(product => {
+    document.querySelector('.featured-list').innerHTML += Mustache.render(productTMPL, product);
+});
+
+
 
 Array.from(document.getElementsByClassName('products-list')).forEach(element => {
     element.addEventListener('click', e => {
