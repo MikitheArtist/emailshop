@@ -178,7 +178,6 @@
                 <div class="get_off-button">
                     <button>Subscribe</button>
                 </div>
-                </div>
             </form>
 
         </div>
@@ -186,6 +185,20 @@
 
     </div>
 
+</section>
+
+<section class="featured_products">
+    <div class="container">
+        <div class="featured_products-title">featured products</div>
+        <div class="featured_products-dsc">New Collections this Season</div>
+        <div class="featured-list"></div>
+    </div>
+</section>
+
+<section class="new_lookbook">
+    <div class="container">
+
+    </div>
 </section>
 
 <script id="category-tpl" type="x-tmpl-mustache">
@@ -203,10 +216,8 @@
        </div>
        </div>
       </div>
-
-
-
 </script>
+
 <script id="product-tpl" type="x-tmpl-mustache">
     <div class="products" data-id = "{{ id }}">
        <div class="product-img">
@@ -217,9 +228,18 @@
       </div>
       <div class="product-price">from $ {{ price }} </div>
     </div>
+</script>
 
-
-
+<script id="featured-tpl" type="x-tmpl-mustache">
+    <div class="products" data-id = "{{ id }}">
+       <div class="product-img">
+       <img src="{{ img }}" alt="">
+      </div>
+      <div class="product-title">
+        {{title}}
+      </div>
+      <div class="product-price">from $ {{ price }} </div>
+    </div>
 </script>
 
 
