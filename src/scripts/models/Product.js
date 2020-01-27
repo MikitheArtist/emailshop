@@ -9,6 +9,8 @@ export default class Product {
                     quantity = 0,
                     img = null,
                     description = '',
+                    is_new = false,
+                    is_featured = false,
                     category = new Category()
                 } = {}) {
         this.id = id;
@@ -16,6 +18,10 @@ export default class Product {
         this.price = price;
         this.quantity = quantity;
         this.img = img;
+
+        this.is_new = is_new;
+        this.is_featured = is_featured;
+
         this.assignCategory(category);
     }
 
