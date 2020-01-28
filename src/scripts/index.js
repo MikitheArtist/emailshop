@@ -32,7 +32,9 @@ productsCatalog.forEach(product => {
 });
 
 
+storeService.loadData();
 storeService.set('products', prdArray);
+
 let cart = storeService.get('cart');
 let products = storeService.get('products');
 
@@ -60,7 +62,7 @@ Array.from(document.getElementsByClassName('products-list')).forEach(element => 
         if (!productEl) return;
 
         let product = products.find(prd => prd.id === productEl.dataset.id);
-
+        console.log(cart);
         cart.addProduct(product, 1);
 
     });
