@@ -6,6 +6,7 @@ import StoreService from './storeService';
 
 let storeService = new StoreService();
 window.storeService = storeService;
+
 import {productsCatalog} from  './models/catalog';
 import {productsCategories} from "./models/productsCategory";
 import Product from './models/Product';
@@ -62,11 +63,24 @@ Array.from(document.getElementsByClassName('products-list')).forEach(element => 
         if (!productEl) return;
 
         let product = products.find(prd => prd.id === productEl.dataset.id);
+        cart.addProduct(product, 1);
+
+    });
+});
+
+Array.from(document.getElementsByClassName('featured-list')).forEach(element => {
+    element.addEventListener('click', e => {
+        let productEl = e.target.classList.contains('products') ? e.target : e.target.closest('.products');
+
+        if (!productEl) return;
+
+        let product = products.find(prd => prd.id === productEl.dataset.id);
         console.log(cart);
         cart.addProduct(product, 1);
 
     });
 });
+
 
 window.onunload = function () {
     storeService.save();
