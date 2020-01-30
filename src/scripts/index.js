@@ -7,7 +7,7 @@ import StoreService from './storeService';
 let storeService = new StoreService();
 window.storeService = storeService;
 
-import {productsCatalog} from  './models/catalog';
+import {productsCatalog} from './models/catalog';
 import {productsCategories} from "./models/productsCategory";
 import Product from './models/Product';
 import Category from './models/Category';
@@ -45,7 +45,7 @@ let productTMPL = document.getElementById('product-tpl').innerHTML;
 let newProducts = products.filter(product => product.is_new === true);
 
 console.log(newProducts);
-newProducts.forEach( product => {
+newProducts.forEach(product => {
     document.querySelector('.products-list').innerHTML += Mustache.render(productTMPL, product);
 });
 
@@ -53,7 +53,6 @@ let newFeatured = products.filter(product => product.is_featured === true);
 newFeatured.forEach(product => {
     document.querySelector('.featured-list').innerHTML += Mustache.render(productTMPL, product);
 });
-
 
 
 Array.from(document.getElementsByClassName('products-list')).forEach(element => {
@@ -80,6 +79,31 @@ Array.from(document.getElementsByClassName('featured-list')).forEach(element => 
 
     });
 });
+
+Array.from(document.getElementsByClassName('header-tools-item')).forEach(element => {
+        element.addEventListener('click', e => {
+
+        alert('product');
+
+    });
+});
+
+
+/*
+// Открываем корзину
+/!*let block =  document.getElementsByClassName('header-tools-item');
+block.addEventListener('click', e => {};*!/
+   /!* let prdCart = Array.from(document.getElementsByClassName('header-tools-item-badge'))
+        let out = '';
+        for (let key in prdCart) {
+            out += '';
+            out += '';
+            out += '';
+            out += '';*!/
+}
+*/
+
+
 
 
 window.onunload = function () {
