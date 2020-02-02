@@ -80,29 +80,6 @@ Array.from(document.getElementsByClassName('featured-list')).forEach(element => 
     });
 });
 
-Array.from(document.getElementsByClassName('header-tools-item')).forEach(element => {
-        element.addEventListener('click', e => {
-
-        alert('product');
-
-    });
-});
-
-
-/*
-// Открываем корзину
-/!*let block =  document.getElementsByClassName('header-tools-item');
-block.addEventListener('click', e => {};*!/
-   /!* let prdCart = Array.from(document.getElementsByClassName('header-tools-item-badge'))
-        let out = '';
-        for (let key in prdCart) {
-            out += '';
-            out += '';
-            out += '';
-            out += '';*!/
-}
-*/
-
 
 
 
