@@ -82,7 +82,9 @@ Array.from(document.getElementsByClassName('featured-list')).forEach(element => 
 
 Array.from(document.getElementsByClassName('header-tools-item')).forEach(element => {
         element.addEventListener('click', e => {
-            console.log(cart);
+
+        alert('product');
+
     });
 });
 
