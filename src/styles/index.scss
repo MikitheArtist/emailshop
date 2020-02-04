@@ -211,6 +211,10 @@ body {
   }
 
   .container {
+    width: 1140px;
+    height: 700px;
+    background-color: #ffffff;
+    padding: 20px;
     margin-bottom: 70px;
     margin-top: 70px;
     display: flex;
@@ -266,7 +270,7 @@ body {
           justify-content:center;
           margin: 10px 0;
 
-          .button {
+          .remove_button {
             text-align: center;
             width: 80px;
             height: 25px;
