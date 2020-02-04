@@ -1,4 +1,5 @@
 import Mustache from 'mustache';
+import Cart from "../models/Cart";
 
 export default class CartRenderer {
     constructor(cart, {
@@ -15,7 +16,7 @@ export default class CartRenderer {
 
 
     assignListener() {
-        
+
 
         document.querySelector('.header-tools-item').addEventListener('click', () => {
 
@@ -29,18 +30,29 @@ export default class CartRenderer {
                 cartDiv.innerHTML += Mustache.render(productTMPL, cartItem);
             });
 
-            document.getElementsByClassName('hello-div-content').classList.add("hello-div-content-active");
+            document.querySelector('.hello-div-content').classList.add("hello-div-content-active");
 
-            document.querySelector('.close').addEventListener('click', () => {
+        });
 
-                document.getElementsByClassName('hello-div-content').classList.remove("hello-div-content-active");
-            });
+        /*// Удаляем товар
+        document.querySelector('.remove_button').addEventListener('click', () => {
 
+            this.removeProduct();
+        });
+
+        //чистим корзину
+        document.querySelector('.button_clean_out').addEventListener('click', () => {
+
+            this.clean();
+        });*/
+
+        document.querySelector('.close').addEventListener('click', () => {
+
+            document.querySelector('.hello-div-content').classList.remove("hello-div-content-active");
         });
 
 
     }
-
 
 
 }
