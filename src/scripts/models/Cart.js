@@ -50,13 +50,13 @@ export default class Cart {
         cartItem.decreaseQuantity(quantity);
     }
 
-    removeProduct(product) {
-        let cartItem = this.findCartItemByProduct(product);
+    removeProduct(productId) {
+        let cartItem = this.findCartItemByProduct({id: productId});
         if (!cartItem) return;
 
         cartItem.reset();
 
-        this.cartItems.splice(this.findCartItemIndexByProduct(product), 1);
+        this.cartItems.splice(this.findCartItemIndexByProduct({id: productId}), 1);
     }
 
     findCartItemByProduct(product) {

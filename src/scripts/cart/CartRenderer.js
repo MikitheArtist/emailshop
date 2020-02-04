@@ -30,20 +30,25 @@ export default class CartRenderer {
                 cartDiv.innerHTML += Mustache.render(productTMPL, cartItem);
             });
 
+            document.querySelectorAll('.remove_button').addEventListener('click', (e) => {
+                let productItem = e.target.closest('.product-item');
+
+                console.log(productItem.dataset.id);
+
+                this.cart.removeProduct(productItem.dataset.id);
+            });
+
             document.querySelector('.hello-div-content').classList.add("hello-div-content-active");
 
         });
 
         /*// Удаляем товар
-        document.querySelector('.remove_button').addEventListener('click', () => {
 
-            this.removeProduct();
-        });
 
         //чистим корзину
         document.querySelector('.button_clean_out').addEventListener('click', () => {
 
-            this.clean();
+            this.clear();
         });*/
 
         document.querySelector('.close').addEventListener('click', () => {
