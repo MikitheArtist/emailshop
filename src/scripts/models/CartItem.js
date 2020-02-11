@@ -11,8 +11,8 @@ export default class CartItem {
     }
 
     decreaseQuantity(quantity) {
-        if (this.quantity < quantity) {
-            quantity = this.quantity;
+        if (this.product.quantity < quantity) {
+            quantity = this.product.quantity;
         }
 
         this.product.quantity += quantity;

@@ -48,6 +48,8 @@ export default class Cart {
         if (!cartItem) return;
 
         cartItem.decreaseQuantity(quantity);
+
+        this.renderer.updateHeaderCart();
     }
 
     removeProduct(productId) {
@@ -57,6 +59,8 @@ export default class Cart {
         cartItem.reset();
 
         this.cartItems.splice(this.findCartItemIndexByProduct({id: productId}), 1);
+
+        this.renderer.updateHeaderCart();
     }
 
     findCartItemByProduct(product) {

@@ -30,13 +30,35 @@ export default class CartRenderer {
                 cartDiv.innerHTML += Mustache.render(productTMPL, cartItem);
             });
 
-            document.querySelectorAll('.remove_button').addEventListener('click', (e) => {
-                let productItem = e.target.closest('.product-item');
+           /* Array.from(document.querySelectorAll('.remove_button')).forEach(element => {
+                element.addEventListener('click', (e) => {
+                    let productItem = e.target.closest('.product-item');
 
-                console.log(productItem.dataset.id);
+                   // let productItem = e.target.closest('.product-item') && e.target.closest('.product-item').dataset.id === 'product-item';
 
-                this.cart.removeProduct(productItem.dataset.id);
-            });
+                    console.log(productItem.dataset.id);
+
+
+                    if (productItem) {
+                        this.cart.removeProduct(productItem.dataset.id);
+
+                    }
+
+                });
+            });*/
+
+           let helloDiv = document.querySelector('.hello-div');
+            helloDiv.addEventListener('click', (e) => {
+               let target = e.target.closest('.remove_button');
+
+               console.log(target.dataset.id);
+
+
+               if (target) {
+                   this.cart.removeProduct(target.dataset.id);
+
+               }
+           });
 
             document.querySelector('.hello-div-content').classList.add("hello-div-content-active");
 
@@ -48,7 +70,7 @@ export default class CartRenderer {
         //чистим корзину
         document.querySelector('.button_clean_out').addEventListener('click', () => {
 
-            this.clear();
+            this.cart.clear();
         });*/
 
         document.querySelector('.close').addEventListener('click', () => {
