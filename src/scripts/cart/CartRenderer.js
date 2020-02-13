@@ -34,10 +34,7 @@ export default class CartRenderer {
                 element.addEventListener('click', (e) => {
                     let productItem = e.target.closest('.product-item');
 
-                   // let productItem = e.target.closest('.product-item') && e.target.closest('.product-item').dataset.id === 'product-item';
-
                     console.log(productItem.dataset.id);
-
 
                     if (productItem) {
                         this.cart.removeProduct(productItem.dataset.id);
@@ -47,18 +44,30 @@ export default class CartRenderer {
                 });
             });*/
 
-           let helloDiv = document.querySelector('.hello-div');
+           /*let helloDiv = document.querySelector('.hello-div');
             helloDiv.addEventListener('click', (e) => {
-               let target = e.target.closest('.remove_button');
 
-               console.log(target.dataset.id);
-
-
-               if (target) {
-                   this.cart.removeProduct(target.dataset.id);
-
+               if (e.target.tagName === 'button') {
+                   if (e.target.classList.contains('remove_button')) {
+                       let target = document.querySelector('.product-item');
+                       console.log(target);
+                       this.cart.removeProduct(target.dataset.id);
+                   }
                }
-           });
+           });*/
+
+            document.addEventListener('click', function (event) {
+                if (event.target.tagName === 'button') {
+                    if (event.target.classList.contains('remove_button')) {
+                        let target = event.target.closest('.product-item');
+                        console.log(target);
+                        this.cart.removeProduct(target.dataset.id);
+                    }
+                }
+
+            });
+
+
 
             document.querySelector('.hello-div-content').classList.add("hello-div-content-active");
 
