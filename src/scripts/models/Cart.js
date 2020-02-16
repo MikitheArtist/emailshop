@@ -49,7 +49,7 @@ export default class Cart {
 
         cartItem.decreaseQuantity(quantity);
 
-        this.renderer.updateHeaderCart();
+
     }
 
     removeProduct(productId) {
