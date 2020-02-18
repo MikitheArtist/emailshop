@@ -4,7 +4,6 @@
     <list default="true" id="e4c32f65-f977-4eb3-9a63-9ada2cd00bb1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scripts/cart/CartRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/cart/CartRenderer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/models/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/models/Cart.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +31,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../29.11.2019" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -79,7 +78,7 @@
       <workItem from="1581630847874" duration="620000" />
       <workItem from="1581659444323" duration="10050000" />
       <workItem from="1581835491571" duration="42000" />
-      <workItem from="1581835595325" duration="3625000" />
+      <workItem from="1581835595325" duration="13109000" />
     </task>
     <servers />
   </component>
@@ -91,10 +90,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="72" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1581539357143" />
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1581599454036">
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1581966935924">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1581599454036" />
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1581966935924" />
     <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1581835500447">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

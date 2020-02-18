@@ -77,6 +77,15 @@ export default class CartRenderer {
 
                     this.cart.removeProduct(target.dataset.id);
 
+                    let cartDiv = document.querySelector('.hello-div');
+                    cartDiv.innerHTML = '';
+
+                    let productTMPL = document.getElementById("cart-item").innerHTML;
+
+                    this.cart.cartItems.forEach((cartItem) => {
+                        cartDiv.innerHTML += Mustache.rendder(productTMPL, cartItem);
+                    });
+
 
 
                 }
