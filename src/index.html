@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700|Playfair+Display:400,700&display=swap"
           rel="stylesheet">
     <title>PENTA</title>
 </head>
-<body class="loading">
+<body >
 
 <header class="header">
     <div class="header-line">
@@ -67,7 +68,12 @@
     <div class="header-naw">
         <div class="container">
             <div class="header-menu">
-                <ul class="header-menu-items">
+                <span id="trigger" class="trigger">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+                <ul id="menu" class="header-menu-items">
                     <li class="header-menu-item"><a href="#">home</a></li>
                     <li class="header-menu-item"><a href="#">shop</a></li>
                     <li class="header-menu-item"><a href="#">lookbook</a></li>
@@ -77,6 +83,9 @@
                     <li class="header-menu-item"><a href="#">features</a></li>
                 </ul>
             </div>
+
+
+
             <div class="header-tools">
                 <div class="header-tools-item">
                     <div class="header-tools-item-text">Cart:</div>
@@ -105,14 +114,12 @@
         </div>
     </div>
 </header>
-<section class="hello-div-content hello-div-content-active">
+<section class="hello-div-content">
     <div class="container">
 
             <div class="hello-div"></div>
             <div class="hello-div-cta">
-                <button class="button_clean_out">clean out</button>
-                <button class="button_to_order">to order</button>
-                <button class="close">x</button>
+                <button class="close">&times;</button>
             </div>
 
     </div>
@@ -339,7 +346,7 @@
 <script id="cart-item" type="x-tmpl-mustache">
                         <div class="product-item" data-id="{{product.id}}">
                             <div class="wrapper-img" >
-                                <img src="{{ img }}" alt="">
+                                <img src="{{ product.img }}" alt="">
                             </div>
                             <div class="product-title">
                                 {{ product.title }}

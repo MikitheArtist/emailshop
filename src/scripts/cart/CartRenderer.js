@@ -83,7 +83,7 @@ export default class CartRenderer {
                     let productTMPL = document.getElementById("cart-item").innerHTML;
 
                     this.cart.cartItems.forEach((cartItem) => {
-                        cartDiv.innerHTML += Mustache.rendder(productTMPL, cartItem);
+                        cartDiv.innerHTML += Mustache.render(productTMPL, cartItem);
                     });
 
 

@@ -80,6 +80,16 @@ Array.from(document.getElementsByClassName('featured-list')).forEach(element => 
     });
 });
 
+document.getElementById("trigger").addEventListener('click', () => {
+    document.getElementById("menu").classList.toggle("show");
+});
+
+
+/*
+function open() {
+    document.getElementById("menu").classList.toggle("show");
+}
+*/
 
 
 
